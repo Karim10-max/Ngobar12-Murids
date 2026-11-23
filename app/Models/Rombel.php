@@ -6,7 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Rombel extends Model
 {
-    protected $fillable = [
-        'nama_rombel',
-    ];
+    protected $fillable = ['nama_rombel'];
 }

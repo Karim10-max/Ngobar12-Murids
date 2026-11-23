@@ -6,6 +6,8 @@ use App\Models\Rombel;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use App\Http\Requests\RombelStoreRequest;
+use App\Http\Requests\RombelUpdateRequest;
 
 class RombelController extends Controller
 {

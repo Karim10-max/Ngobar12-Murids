@@ -39,30 +39,35 @@
                 class="form-control @error('rombel') is-invalid @enderror"
                 id="inputRombel">
                 <option value="">-- Pilih Rombel --</option>
-                @foreach ($rombels as $rombel)
+                @forelse ($rombels as $rombel)
                     <option value="{{ $rombel->nama_rombel }}"
                         {{ old('rombel') == $rombel->nama_rombel ? 'selected' : '' }}>
                         {{ $rombel->nama_rombel }}
                     </option>
-                @endforeach
+                @empty
+                    <option value="">Tidak ada rombel tersedia</option>
+                @endforelse
             </select>
-            @error('rombel')
-                <div class="form-text text-danger">{{ $message }}</div>
-            @enderror
         </div>
 
             <div class="mb-3">
                 <label for="inputRayon" class="form-label"><strong>Rayon:</strong></label>
-                <input
-                    type="text"
+                <select
                     name="rayon"
                     class="form-control @error('rayon') is-invalid @enderror"
-                    id="inputRayon"
-                    placeholder="Rayon">
-                @error('rayon')
-                    <div class="form-text text-danger">{{ $message }}</div>
-                @enderror
+                    id="inputRayon">
+                    <option value="">-- Pilih Rayon --</option>
+                @forelse ($rayons as $rayon)
+                    <option value="{{ $rayon->nama_rayon }}"
+                        {{ old('rayon') == $rayon->nama_rayon ? 'selected' : '' }}>
+                        {{ $rayon->nama_rayon }}
+                    </option>
+                @empty
+                    <option value="">Tidak ada rayon tersedia</option>
+                @endforelse
+                </select>
             </div>
+
              <div class="mb-3">
                 <label for="inputNoTelp" class="form-label"><strong>No Telp:</strong></label>
                 <input
