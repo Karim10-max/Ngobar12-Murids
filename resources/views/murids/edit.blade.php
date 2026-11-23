@@ -39,12 +39,18 @@
         </div>
          <div class="mb-3">
             <label for="inputRombel" class="form-label"><strong>Rombel:</strong></label>
-            <input
-                type="text"
+            <select
                 name="rombel"
                 class="form-control @error('rombel') is-invalid @enderror"
-                id="inputRombel"
-                placeholder="Rombel">
+                id="inputRombel">
+                <option value="">-- Pilih Rombel --</option>
+                @foreach ($rombels as $rombel)
+                    <option value="{{ $rombel->nama_rombel }}"
+                        {{ old('rombel', $murid->rombel) == $rombel->nama_rombel ? 'selected' : '' }}>
+                        {{ $rombel->nama_rombel }}
+                    </option>
+                @endforeach
+            </select>
             @error('rombel')
                 <div class="form-text text-danger">{{ $message }}</div>
             @enderror
