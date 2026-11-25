@@ -1,8 +1,7 @@
 
-@extends('rayons.layout')
+@extends('layout')
 
 @section('content')
-@section('Navbar')
 <div class="card mt-5">
     <h2 class="card-header">Tambah Rayon</h2>
     <div class="card-body">
