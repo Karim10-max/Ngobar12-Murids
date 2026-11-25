@@ -11,9 +11,10 @@ use App\Http\Requests\RayonUpdateRequest;
 
 class RayonController extends Controller
 {
-    public function index()
+    public function index(): View
     {
         $rayons = Rayon::latest()->paginate(5);
+
         return view('rayons.index', compact('rayons'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -39,7 +40,7 @@ class RayonController extends Controller
     }
 
 
-    public function edit(Rayon $rayon)
+    public function edit(Rayon $rayon): View
     {
         return view('rayons.edit', compact('rayon'));
     }

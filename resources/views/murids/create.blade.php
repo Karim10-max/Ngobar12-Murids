@@ -1,5 +1,7 @@
 @extends('murids.layout')
 @section('content')
+@section('Navbar')
+
 <div class="card mt-5">
   <h2 class="card-header">Add New Murid</h2>
   <div class="card-body">
@@ -11,15 +13,16 @@
         <div class="mb-3">
             <label for="inputNis" class="form-label"><strong>Nis:</strong></label>
             <input
-                type="text"
+                type="number"
                 name="nis"
                 class="form-control @error('nis') is-invalid @enderror"
                 id="inputNis"
-                placeholder="Nis">
+                placeholder="Nis"
             @error('nis')
                 <div class="form-text text-danger">{{ $message }}</div>
             @enderror
         </div>
+
          <div class="mb-3">
             <label for="inputNama" class="form-label"><strong>Name:</strong></label>
             <input
@@ -32,6 +35,7 @@
                 <div class="form-text text-danger">{{ $message }}</div>
             @enderror
         </div>
+
          <div class="mb-3">
             <label for="inputRombel" class="form-label"><strong>Rombel:</strong></label>
             <select
@@ -71,15 +75,16 @@
              <div class="mb-3">
                 <label for="inputNoTelp" class="form-label"><strong>No Telp:</strong></label>
                 <input
-                    type="text"
+                    type="number"
                     name="no_tlp"
                     class="form-control @error('no_tlp') is-invalid @enderror"
                     id="inputNoTelp"
-                    placeholder="No Telp">
+                    placeholder="No Telp"
                 @error('no_tlp')
                     <div class="form-text text-danger">{{ $message }}</div>
                 @enderror
             </div>
+
              <div class="mb-3">
                 <label for="inputAlamat" class="form-label"><strong>Alamat:</strong></label>
                 <input
@@ -99,6 +104,7 @@
         name="jk"
         class="form-control @error('jk') is-invalid @enderror"
         id="inputJk">
+        
         <option value="">-- Pilih Jenis Kelamin --</option>
         <option value="Laki-laki">Laki-laki</option>
         <option value="Perempuan">Perempuan</option>

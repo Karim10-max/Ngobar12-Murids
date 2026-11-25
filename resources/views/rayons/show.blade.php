@@ -6,9 +6,9 @@
     <div class="card-body">
         <dl class="row">
             <dt class="col-sm-3">Rayon</dt>
-            <dd class="col-sm-9">{{ $Rayon->nama_rayon }}</dd>
+            <dd class="col-sm-9">{{ $rayon->nama_rayon }}</dd>
         </dl>
-        <a href="{{ route('Rayons.index') }}" class="btn btn-secondary">Kembali</a>
+        <a href="{{ route('rayons.index') }}" class="btn btn-secondary">Kembali</a>
     </div>
 </div>
 @endsection

@@ -55,7 +55,8 @@ class MuridController extends Controller
     public function edit(murid $murid):View
     {
         $rombels = Rombel::orderBy('nama_rombel')->get();
-        return view('murids.edit', compact('murid', 'rombels'));
+        $rayons = Rayon::orderBy('nama_rayon')->get();
+        return view('murids.edit', compact('murid', 'rombels','rayons'));
     }
 
     /**

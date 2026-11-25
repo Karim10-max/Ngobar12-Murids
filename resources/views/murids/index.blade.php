@@ -22,6 +22,8 @@
         <th>Alamat</th>
         <th>No Telp</th>
         <th>Jk</th>
+        <th width="200px">Action</th>
+          </tr>
         <tr>
       <thead>
 

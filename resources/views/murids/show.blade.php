@@ -1,14 +1,72 @@
 @extends('murids.layout')
 
 @section('content')
+
 <div class="card mt-5">
-    <h2 class="card-header">Detail Murid</h2>
-    <div class="card-body">
-        <dl class="row">
-            <dt class="col-sm-3">Murid</dt>
-            <dd class="col-sm-9">{{ $murid->nama_murid }}</dd>
-        </dl>
-        <a href="{{ route('murids.index') }}" class="btn btn-secondary">Kembali</a>
+  <h2 class="card-header">Show Murid</h2>
+  <div class="card-body">
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a class="btn btn-primary btn-sm" href="{{ route('murids.index') }}"><i class="fa fa-arrow-left"></i> Back</a>
     </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Nis:</strong> <br/>
+                {{ $murid->nis }}
+            </div>
+        </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Nama:</strong> <br/>
+                {{ $murid->nama }}
+            </div>
+        </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Rombel:</strong> <br/>
+                {{ $murid->rombel }}
+            </div>
+        </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Rayon:</strong> <br/>
+                {{ $murid->rayon }}
+            </div>
+        </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Alamat:</strong> <br/>
+                {{ $murid->alamat }}
+            </div>
+        </div>
+        
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>No Telp:</strong> <br/>
+                {{ $murid->no_tlp }}
+            </div>
+        </div>    
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>JK:</strong> <br/>
+                {{ $murid->jk }}
+            </div>
+        </div>    
+    
+
+  </div>
 </div>
 @endsection

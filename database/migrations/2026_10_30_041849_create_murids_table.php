@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('murids', function (Blueprint $table) {
             $table->id();
-            $table->integer('nis');
+            $table->integer('nis')->unique();
             $table->string('nama');
             $table->string('rombel');
             $table->string('rayon');

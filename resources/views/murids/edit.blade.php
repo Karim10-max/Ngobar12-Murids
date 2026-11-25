@@ -1,5 +1,6 @@
 @extends('murids.layout')
 @section('content')
+@section('Navbar')
 
 <div class="card mt-5">
     <h2 class="card-header">Edit Product</h2>
@@ -16,11 +17,12 @@
         <div class="mb-3">
             <label for="inputNis" class="form-label"><strong>Nis:</strong></label>
             <input
-                type="text"
+                type="number"
                 name="nis"
                 class="form-control @error('nis') is-invalid @enderror"
                 id="inputNis"
-                placeholder="Nis">
+                placeholder="Nis"
+                value="{{ old('nis', $murid->nis) }}">
             @error('nis')
                 <div class="form-text text-danger">{{ $message }}</div>
             @enderror
@@ -32,7 +34,8 @@
                 name="nama"
                 class="form-control @error('nama') is-invalid @enderror"
                 id="inputNama"
-                placeholder="Name">
+                placeholder="Name"
+                value="{{ old('nama', $murid->nama) }}">
             @error('nama')
                 <div class="form-text text-danger">{{ $message }}</div>
             @enderror
@@ -46,7 +49,7 @@
                 <option value="">-- Pilih Rombel --</option>
                 @foreach ($rombels as $rombel)
                     <option value="{{ $rombel->nama_rombel }}"
-                        {{ old('rombel', $murid->rombel) == $rombel->nama_rombel ? 'selected' : '' }}>
+                        @selected(old('rombel', $murid->rombel) == $rombel->nama_rombel)>
                         {{ $rombel->nama_rombel }}
                     </option>
                 @endforeach
@@ -58,24 +61,32 @@
         
             <div class="mb-3">
                 <label for="inputRayon" class="form-label"><strong>Rayon:</strong></label>
-                <input
-                    type="text"
+                <select
                     name="rayon"
                     class="form-control @error('rayon') is-invalid @enderror"
-                    id="inputRayon"
-                    placeholder="Rayon">
-                @error('rayon')
-                    <div class="form-text text-danger">{{ $message }}</div>
-                @enderror
+                    id="inputRayon">
+                    <option value="">-- Pilih Rayon --</option>
+                @forelse ($rayons as $rayon)
+                    <option value="{{ $rayon->nama_rayon }}"
+                        @selected(old('rayon', $murid->rayon) == $rayon->nama_rayon)>
+                        {{ $rayon->nama_rayon }}
+                    </option>
+                @empty
+                    <option value="">Tidak ada rayon tersedia</option>
+                @endforelse
+                </select>
             </div>
+
              <div class="mb-3">
                 <label for="inputNoTelp" class="form-label"><strong>No Telp:</strong></label>
                 <input
-                    type="text"
+                    type="number"
                     name="no_tlp"
                     class="form-control @error('no_tlp') is-invalid @enderror"
                     id="inputNoTelp"
-                    placeholder="No Telp">
+                    placeholder="No Telp"
+                    value="{{ old('no_tlp', $murid->no_tlp) }}">
+
                 @error('no_tlp')
                     <div class="form-text text-danger">{{ $message }}</div>
                 @enderror
@@ -87,7 +98,8 @@
                     name="alamat"
                     class="form-control @error('alamat') is-invalid @enderror"
                     id="inputAlamat"
-                    placeholder="Alamat">
+                    placeholder="Alamat"
+                    value="{{ old('alamat', $murid->alamat) }}">
                 @error('alamat')
                     <div class="form-text text-danger">{{ $message }}</div>
                 @enderror
@@ -100,10 +112,8 @@
         class="form-control @error('jk') is-invalid @enderror"
         id="inputJk">
         <option value="">-- Pilih Jenis Kelamin --</option>
-        <option value="Laki-laki">Laki-laki</option>
-        <option value="Perempuan">Perempuan</option>
-        
-       
+        <option value="Laki-laki" @selected(old('jk', $murid->jk) == 'Laki-laki')>Laki-laki</option>
+        <option value="Perempuan" @selected(old('jk', $murid->jk) == 'Perempuan')>Perempuan</option>
     </select>
     @error('jk')
         <div class="form-text text-danger">{{ $message }}</div>
