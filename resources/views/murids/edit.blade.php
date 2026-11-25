@@ -1,6 +1,5 @@
-@extends('murids.layout')
+@extends('layout')
 @section('content')
-@section('Navbar')
 
 <div class="card mt-5">
     <h2 class="card-header">Edit Product</h2>

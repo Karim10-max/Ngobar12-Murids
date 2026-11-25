@@ -1,5 +1,4 @@
-@extends('murids.layout')
-
+@extends('layout')
 @section('content')
 
 <div class="card mt-5">
