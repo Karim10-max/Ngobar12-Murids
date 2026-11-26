@@ -1,6 +1,5 @@
 @extends('layout')
 @section('content')
-
 <div class="card mt-5">
     <h2 class="card-header">Edit Rombel</h2>
     <div class="card-body">
