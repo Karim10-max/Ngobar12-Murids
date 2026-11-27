@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class MuridUpdateRequest extends FormRequest
 {
@@ -23,13 +24,13 @@ class MuridUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-        'nis'=>'required',
-        'nama'=>'required',
-        'rombel'=>'required',
-        'rayon'=>'required',
-        'alamat'=>'required',
-        'no_tlp'=>'required',
-        'jk'=>'required',
+            'nis' => ['required',Rule::unique('murids', 'nis')->ignore($this->route('murid'))],
+            'nama' => 'required',
+            'rombel' => 'required',
+            'rayon' => 'required',
+            'alamat' => 'required',
+            'no_tlp' => 'required',
+            'jk' => 'required',
         ];
     }
 }

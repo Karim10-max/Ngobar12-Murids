@@ -64,6 +64,7 @@ class MuridController extends Controller
      */
     public function update(MuridUpdateRequest $request, murid $murid):RedirectResponse
     {
+        
         $murid->update($request->validated());
         return redirect()->route('murids.index')->with('success', 'Data Murid sudah diperbarui.');
     }

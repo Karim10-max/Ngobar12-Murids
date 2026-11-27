@@ -23,7 +23,7 @@ class MuridStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-        'nis'=>'required',
+        'nis' => 'required|unique:murids,nis,' ,
         'nama'=>'required',
         'rombel'=>'required',
         'rayon'=>'required',

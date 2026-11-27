@@ -31,7 +31,7 @@
                                 <a class="btn btn-primary btn-sm" href="{{ route('rombels.edit', $rombel) }}">Edit</a>
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah anda yakin menghapus data {{ $rombel->nama_rombel }}')">Delete</button>
                             </form>
                         </td>
                     </tr>
